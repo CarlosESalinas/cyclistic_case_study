@@ -75,11 +75,11 @@ class DataAnalyzer:
         Returns:
             pd.DataFrame: cleaned DataFrame
         """
-        columnas_estacion = [
+        stations_column = [
             "start_station_name", "start_station_id",
             "end_station_name", "end_station_id"
         ]
-        for col in columnas_estacion:
+        for col in stations_column :
             df[col] = df[col].fillna("Unknown")
 
         df = df.dropna(subset=["end_lat", "end_lng"])
